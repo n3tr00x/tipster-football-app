@@ -1,0 +1,124 @@
+.form-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 4rem;
+}
+
+.form {
+	width: 95%;
+	max-width: 540px;
+	padding: 2rem;
+	background-color: var(--color-grey);
+	border-radius: 8px;
+	box-shadow: var(--shadow);
+	color: var(--color-black);
+}
+
+.form .title {
+	font-size: 2.4rem;
+	font-weight: 700;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.form .row {
+	margin: 1.6rem 0;
+}
+
+.form .error {
+	font-size: 1.6rem;
+	color: var(--color-red);
+	text-align: center;
+}
+
+.form .error,
+.form .valid {
+	font-size: 1.6rem;
+	text-align: center;
+}
+
+.form .error {
+	color: var(--color-red);
+}
+
+.form .valid {
+	color: var(--color-emerald);
+}
+
+.form label,
+.form input,
+.form .submit {
+	font-size: 1.6rem;
+}
+
+.form label {
+	display: block;
+	margin-bottom: 0.8rem;
+}
+
+.form input,
+.form .submit {
+	border: 2px solid transparent;
+	border-radius: 8px;
+	outline: none;
+	box-shadow: var(--shadow);
+}
+
+.form input {
+	width: 100%;
+	padding: 1rem;
+}
+
+.form input:focus,
+.form .submit:focus {
+	border-color: var(--color-darker-emerald);
+}
+
+.form .submit {
+	width: 100%;
+	padding: 1.6rem;
+	font-weight: 700;
+	background-color: var(--color-emerald);
+	color: var(--color-white);
+	box-shadow: var(--shadow);
+	transition: 0.2s ease-in-out background-color;
+}
+
+.form .submit:disabled {
+	background-color: var(--color-white);
+	color: var(--color--black);
+}
+
+.form .divider {
+	position: relative;
+	height: 16px;
+}
+
+.form .divider hr {
+	position: absolute;
+	top: 8px;
+	width: 100%;
+}
+
+.form .divider span {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: var(--color-grey);
+	padding: 0 1rem;
+	font-size: 1.2rem;
+	line-height: 16px;
+}
+
+.form .account-question,
+.form .forgot-password {
+	font-size: 1.6rem;
+	text-align: center;
+}
+
+.form .account-question a,
+.form .forgot-password a {
+	color: var(--color-emerald);
+}
