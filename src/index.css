@@ -1,0 +1,84 @@
+:root {
+	/* colors */
+	--color-white: #fafafa;
+	--color-black: #0a0a0a;
+	--color-emerald: #047857;
+	--color-darker-emerald: #064e3b;
+	--color-grey: #f1f5f9;
+	--color-red: rgb(145, 30, 30);
+
+	/* root font size */
+	--font-size-root: 62.5%;
+
+	/* font family */
+	--font-main: 'Montserrat', sans-serif;
+
+	/* box shadow */
+	--shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+}
+
+*,
+*::after,
+*::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: var(--font-main);
+}
+
+html,
+body,
+#root {
+	height: 100%;
+}
+
+html {
+	font-size: var(--font-size-root);
+}
+
+body {
+	background-color: var(--color-white);
+}
+
+/* reset css */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-size: 100%;
+	font-weight: normal;
+}
+
+ul,
+ol {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+	margin: 0;
+	padding: 0;
+	font-size: 100%;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* global classes */
+
+.wrapper {
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+}
