@@ -1,0 +1,75 @@
+.header {
+	padding: 1.2rem;
+	background-color: var(--color-emerald);
+	border-bottom: 4px solid var(--color-darker-emerald);
+}
+
+.header .title {
+	color: var(--color-white);
+	font-size: 2.8rem;
+	font-weight: 700;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.header .navigation {
+	position: fixed;
+	inset: auto 0 0 0;
+	width: 100%;
+	background-color: var(--color-emerald);
+}
+
+.navigation ul {
+	display: flex;
+}
+
+.navigation .item {
+	flex: 1;
+	text-align: center;
+}
+
+.navigation .item a {
+	display: block;
+	padding: 2.4rem;
+	color: var(--color-white);
+	font-size: 1.6rem;
+	font-weight: 700;
+	transition: 0.2s ease-in-out background-color;
+}
+
+.navigation .item a.active {
+	background-color: var(--color-darker-emerald);
+}
+
+@media (min-width: 992px) {
+	.header .title {
+		align-self: center;
+	}
+
+	.header .navigation {
+		position: static;
+		width: auto;
+	}
+
+	.header-container {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.navigation .item {
+		flex: none;
+	}
+
+	.navigation .item a {
+		padding: 1rem;
+	}
+
+	.navigation .item a.active {
+		background-color: unset;
+		color: var(--color-darker-emerald);
+	}
+
+	.navigation .item a {
+		transition-property: color;
+	}
+}
