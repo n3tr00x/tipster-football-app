@@ -1,0 +1,28 @@
+.loader {
+	position: relative;
+	display: inline-block;
+	font-size: 1.6rem;
+	color: var(--color-white);
+}
+.loader::after {
+	content: '';
+	position: absolute;
+	inset: auto -10px 2px auto;
+	width: 5px;
+	height: 5px;
+	border-radius: 50%;
+	background-color: var(--color-white);
+	animation: loader 0.5s linear infinite;
+}
+
+@keyframes loader {
+	0% {
+		box-shadow: 10px 0 rgba(255, 255, 255, 0), 20px 0 rgba(255, 255, 255, 0);
+	}
+	50% {
+		box-shadow: 10px 0 white, 20px 0 rgba(255, 255, 255, 0);
+	}
+	100% {
+		box-shadow: 10px 0 white, 20px 0 white;
+	}
+}
