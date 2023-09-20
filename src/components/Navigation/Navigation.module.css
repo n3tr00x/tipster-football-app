@@ -17,6 +17,7 @@
 	inset: auto 0 0 0;
 	width: 100%;
 	background-color: var(--color-emerald);
+	z-index: 999;
 }
 
 .navigation ul {
@@ -30,11 +31,17 @@
 
 .navigation .item a {
 	display: block;
-	padding: 2.4rem;
+	padding: 1.8rem;
 	color: var(--color-white);
 	font-size: 1.6rem;
 	font-weight: 700;
 	transition: 0.2s ease-in-out background-color;
+}
+
+.navigation .item a img {
+	width: 24px;
+	height: 24px;
+	margin: 0 auto;
 }
 
 .navigation .item a.active {

@@ -1,4 +1,9 @@
 import { NavLink } from 'react-router-dom';
+import home from '../../assets/home.svg';
+import ball from '../../assets/ball.svg';
+import standings from '../../assets/standings.svg';
+import settings from '../../assets/settings.svg';
+
 import styles from './Navigation.module.css';
 
 export const LoggedInNavigation = () => {
@@ -6,22 +11,39 @@ export const LoggedInNavigation = () => {
 		<nav className={styles.navigation}>
 			<ul>
 				<li className={styles.item}>
-					<NavLink to="/" className={({ isActive }) => (isActive ? styles.active : null)}>
-						Home
+					<NavLink
+						to="/"
+						className={({ isActive }) =>
+							isActive ? styles.active : null
+						}>
+						<img src={home} alt="" />
+					</NavLink>
+				</li>
+				<li className={styles.item}>
+					<NavLink
+						to="/tip"
+						className={({ isActive }) =>
+							isActive ? styles.active : null
+						}>
+						<img src={ball} alt="" />
 					</NavLink>
 				</li>
 				<li className={styles.item}>
 					<NavLink
 						to="/standings"
-						className={({ isActive }) => (isActive ? styles.active : null)}>
-						Tabele
+						className={({ isActive }) =>
+							isActive ? styles.active : null
+						}>
+						<img src={standings} alt="" />
 					</NavLink>
 				</li>
 				<li className={styles.item}>
 					<NavLink
-						to="/profile"
-						className={({ isActive }) => (isActive ? styles.active : null)}>
-						Profil
+						to="/settings"
+						className={({ isActive }) =>
+							isActive ? styles.active : null
+						}>
+						<img src={settings} alt="" />
 					</NavLink>
 				</li>
 			</ul>
