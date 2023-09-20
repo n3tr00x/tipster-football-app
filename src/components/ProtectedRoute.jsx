@@ -3,14 +3,14 @@ import { AuthContext } from '../contexts/Auth';
 import { useNavigate } from 'react-router-dom';
 
 export const ProtectedRoute = ({ children }) => {
-	const { user } = useContext(AuthContext);
+	const { user, isLoading } = useContext(AuthContext);
 	const navigate = useNavigate();
 
 	useEffect(() => {
-		if (!user) {
+		if (!user && !isLoading) {
 			navigate('/sign-in');
 		}
-	}, [user, navigate]);
+	}, [user, navigate, isLoading]);
 
 	return <>{children}</>;
 };
