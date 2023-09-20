@@ -9,10 +9,19 @@ export const AuthForm = ({ isSignUpForm, isInputFieldsFilled }) => {
 	const navigation = useNavigation();
 	const isSubmitting = navigation.state === 'submitting';
 
-	const isSubmittingSignUpForm = isSubmitting ? <FormLoader /> : 'Zarejestruj się';
-	const isSubmittingSignInForm = isSubmitting ? <FormLoader /> : 'Zaloguj się';
+	const isSubmittingSignUpForm = isSubmitting ? (
+		<FormLoader />
+	) : (
+		'Zarejestruj się'
+	);
+	const isSubmittingSignInForm = isSubmitting ? (
+		<FormLoader />
+	) : (
+		'Zaloguj się'
+	);
 
-	const { isAnyFieldEmpty, handleInputChange } = useValidateForm(isInputFieldsFilled);
+	const { isAnyFieldEmpty, handleInputChange } =
+		useValidateForm(isInputFieldsFilled);
 
 	const accountQuestion = isSignUpForm ? (
 		<span>
@@ -27,13 +36,17 @@ export const AuthForm = ({ isSignUpForm, isInputFieldsFilled }) => {
 	return (
 		<div className={styles['form-container']}>
 			<Form method="POST" className={styles.form}>
-				<h2 className={styles.title}>{isSignUpForm ? 'rejestracja' : 'logowanie'}</h2>
+				<h2 className={styles.title}>
+					{isSignUpForm ? 'rejestracja' : 'logowanie'}
+				</h2>
 				<div className={styles.row}>
 					<p className={styles.error}>
-						{!feedbackMessage?.isFormDataValid && feedbackMessage?.message}
+						{!feedbackMessage?.isFormDataValid &&
+							feedbackMessage?.message}
 					</p>
 					<p className={styles.valid}>
-						{feedbackMessage?.isFormDataValid && feedbackMessage?.message}
+						{feedbackMessage?.isFormDataValid &&
+							feedbackMessage?.message}
 					</p>
 				</div>
 				<div className={styles.row}>
@@ -82,13 +95,21 @@ export const AuthForm = ({ isSignUpForm, isInputFieldsFilled }) => {
 					</div>
 				)}
 				<div className={styles.row}>
-					<button className={styles.submit} disabled={isAnyFieldEmpty}>
-						{isSignUpForm ? isSubmittingSignUpForm : isSubmittingSignInForm}
+					<button
+						className={styles.submit}
+						disabled={isAnyFieldEmpty}>
+						{isSignUpForm
+							? isSubmittingSignUpForm
+							: isSubmittingSignInForm}
 					</button>
 				</div>
 				<div className={styles.row}>
 					<p className={styles['forgot-password']}>
-						{!isSignUpForm && <Link to="/forgot-password">Zapomniałeś hasła?</Link>}
+						{!isSignUpForm && (
+							<Link to="/forgot-password">
+								Zapomniałeś hasła?
+							</Link>
+						)}
 					</p>
 				</div>
 				<div className={styles.row}>
@@ -98,7 +119,9 @@ export const AuthForm = ({ isSignUpForm, isInputFieldsFilled }) => {
 					</div>
 				</div>
 				<div className={styles.row}>
-					<p className={styles['account-question']}>{accountQuestion}</p>
+					<p className={styles['account-question']}>
+						{accountQuestion}
+					</p>
 				</div>
 			</Form>
 		</div>

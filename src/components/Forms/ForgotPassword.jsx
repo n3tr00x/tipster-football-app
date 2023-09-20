@@ -18,10 +18,12 @@ export const ForgotPasswordForm = () => {
 				<h2 className={styles.title}>zapomniałeś hasła?</h2>
 				<div className={styles.row}>
 					<p className={styles.error}>
-						{!feedbackMessage?.isFormDataValid && feedbackMessage?.message}
+						{!feedbackMessage?.isFormDataValid &&
+							feedbackMessage?.message}
 					</p>
 					<p className={styles.valid}>
-						{feedbackMessage?.isFormDataValid && feedbackMessage?.message}
+						{feedbackMessage?.isFormDataValid &&
+							feedbackMessage?.message}
 					</p>
 				</div>
 				<div className={styles.row}>
@@ -36,7 +38,9 @@ export const ForgotPasswordForm = () => {
 					/>
 				</div>
 				<div className={styles.row}>
-					<button className={styles.submit} disabled={isAnyFieldEmpty}>
+					<button
+						className={styles.submit}
+						disabled={isAnyFieldEmpty}>
 						{isSubmitting ? <FormLoader /> : 'Prześlij'}
 					</button>
 				</div>

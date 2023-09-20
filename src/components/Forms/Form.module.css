@@ -22,6 +22,11 @@
 	text-transform: uppercase;
 }
 
+.form .currentEmail {
+	font-size: 1.6rem;
+	text-align: center;
+}
+
 .form .row {
 	margin: 1.6rem 0;
 }
