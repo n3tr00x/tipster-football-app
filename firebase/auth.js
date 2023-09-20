@@ -18,13 +18,33 @@ class AuthError extends Error {
 	}
 }
 
-export const registerUser = async ({ email, username, password, confirmPassword }) => {
+export const getUserUID = async () => {
+	try {
+		return auth.authStateReady().then(() => auth.currentUser?.uid);
+	} catch (error) {
+		return {
+			isError: true,
+			message: 'Wystąpił błąd z pobraniem identyfikatora klienta!',
+		};
+	}
+};
+
+export const registerUser = async ({
+	email,
+	username,
+	password,
+	confirmPassword,
+}) => {
 	try {
 		if (password !== confirmPassword) {
 			throw { code: 'auth/passwords-not-identical' };
 		}
 
-		const { user } = await createUserWithEmailAndPassword(auth, email, password);
+		const { user } = await createUserWithEmailAndPassword(
+			auth,
+			email,
+			password
+		);
 
 		await updateProfile(user, {
 			displayName: username,
@@ -45,7 +65,9 @@ export const registerUser = async ({ email, username, password, confirmPassword 
 			case 'auth/email-already-in-use':
 				throw new AuthError('Ten email jest już w użytku!');
 			case 'auth/weak-password':
-				throw new AuthError('Hasło jest zbyt słabe. Musi składać się z minimum 6 znaków.');
+				throw new AuthError(
+					'Hasło jest zbyt słabe. Musi składać się z minimum 6 znaków.'
+				);
 			default:
 				throw new AuthError('Nieznany błąd.');
 		}
@@ -96,7 +118,9 @@ export const forgotPassword = async ({ email }) => {
 			case 'auth/invalid-email':
 				throw new AuthError('Nieprawidłowy e-mail!');
 			case 'auth/user-not-found':
-				throw new AuthError('Nie znaleziono użytkownika powiązanego z podanym emailem.');
+				throw new AuthError(
+					'Nie znaleziono użytkownika powiązanego z podanym emailem.'
+				);
 			default:
 				throw new AuthError('Nieznany błąd.');
 		}
