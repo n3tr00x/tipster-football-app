@@ -1,0 +1,33 @@
+.tabs {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 8px;
+	margin: 2rem 0;
+}
+
+.tabs a {
+	display: block;
+	border: 2px solid var(--color-emerald);
+	text-decoration: none;
+	color: var(--color-black);
+	border-radius: 50%;
+	padding: 0.5rem;
+}
+
+.tabs a.active {
+	background-color: var(--color-emerald);
+}
+
+.tabs a img {
+	display: block;
+	border-radius: 50%;
+	width: 32px;
+	height: 32px;
+	max-width: 32px;
+	max-height: 32px;
+}
+
+.tabs a span {
+	display: none;
+}

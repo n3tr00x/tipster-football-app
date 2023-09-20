@@ -1,0 +1,19 @@
+.standings {
+	width: 100%;
+	font-size: 1.3rem;
+	box-shadow: var(--shadow);
+}
+
+.standings th {
+	color: var(--color-white);
+	background-color: var(--color-emerald);
+}
+
+.standings tbody td,
+.standings thead th {
+	padding: 1.2rem 0.4rem;
+}
+
+.standings tbody tr:nth-child(2n) {
+	background-color: var(--color-grey);
+}

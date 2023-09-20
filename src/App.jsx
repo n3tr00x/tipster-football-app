@@ -1,11 +1,24 @@
 import { AuthProvider } from './contexts/Auth';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-import { RootLayout } from './pages/Root';
+// layouts
+import { RootLayout } from './layouts/Root';
+import {
+	StandingsLayout,
+	loader as standingsLoader,
+} from './layouts/StandingsLayout';
+// pages
 import { ErrorPage } from './pages/Error';
 import { HomePage } from './pages/Home';
 import { SignUpPage, action as signUpAction } from './pages/SignUp';
 import { SignInPage, action as signInAction } from './pages/SignIn';
-import { ForgotPasswordPage, action as forgotPasswordAction } from './pages/ForgotPassword';
+import {
+	ForgotPasswordPage,
+	action as forgotPasswordAction,
+} from './pages/ForgotPassword';
+import {
+	StandingsPage,
+	loader as standingsDetailsLoader,
+} from './pages/Standings';
 
 const router = createBrowserRouter([
 	{
@@ -31,6 +44,18 @@ const router = createBrowserRouter([
 				path: 'forgot-password',
 				element: <ForgotPasswordPage />,
 				action: forgotPasswordAction,
+			},
+			{
+				path: 'standings',
+				element: <StandingsLayout />,
+				loader: standingsLoader,
+				children: [
+					{
+						path: ':id',
+						element: <StandingsPage />,
+						loader: standingsDetailsLoader,
+					},
+				],
 			},
 		],
 	},
