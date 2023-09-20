@@ -1,0 +1,19 @@
+.loader {
+	position: absolute;
+	inset: calc(50% - 48px) 0 0 calc(50% - 48px);
+	width: 96px;
+	height: 96px;
+	border: 8px solid;
+	border-color: var(--color-emerald) transparent;
+	border-radius: 50%;
+	animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
