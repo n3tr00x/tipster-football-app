@@ -32,6 +32,18 @@ import {
 	SelectedFixturePage,
 	action as fixtureAction,
 } from './pages/SelectedFixture';
+import { SettingsPage } from './pages/Settings';
+import { action as logoutAction } from './pages/Logout';
+import {
+	ChangePasswordPage,
+	action as changePasswordAction,
+} from './pages/ChangePassword';
+import {
+	ChangeEmailPage,
+	action as changeEmailAction,
+} from './pages/ChangeEmail';
+import { action as changeUsernameAction } from './pages/ChangeUsername';
+import { action as changeAvatarAction } from './pages/ChangeAvatar';
 
 const router = createBrowserRouter([
 	{
@@ -91,7 +103,33 @@ const router = createBrowserRouter([
 					},
 				],
 			},
+			{
+				path: 'settings',
+				element: <SettingsPage />,
+			},
+			{
+				path: 'settings/change-email',
+				element: <ChangeEmailPage />,
+				action: changeEmailAction,
+			},
+			{
+				path: 'settings/change-password',
+				element: <ChangePasswordPage />,
+				action: changePasswordAction,
+			},
+			{
+				path: 'change-username',
+				action: changeUsernameAction,
+			},
+			{
+				path: 'change-avatar',
+				action: changeAvatarAction,
+			},
 		],
+	},
+	{
+		path: '/logout',
+		action: logoutAction,
 	},
 ]);
 
