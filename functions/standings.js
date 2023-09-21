@@ -4,6 +4,16 @@ import camelcaseKeys from 'camelcase-keys';
 
 const { VITE_SPORTMONKS_BASE_URL, VITE_SPORTMONKS_API_KEY } = process.env;
 
+const headers = {
+	'Authorization': VITE_SPORTMONKS_API_KEY,
+	'Accept': 'application/json',
+	'Content-Type': 'application/json',
+};
+
+const params = {
+	include: 'participant:name,image_path;details.type',
+};
+
 const getSpecificDetailValue = (detailsArray, codeDetail) => {
 	const specificDetail = detailsArray.find(
 		detail => detail.type.code === codeDetail
@@ -18,14 +28,8 @@ export const handler = async event => {
 		const response = await axios.get(
 			`${VITE_SPORTMONKS_BASE_URL}/standings/seasons/${id}`,
 			{
-				params: {
-					include: 'participant:name,image_path;details.type',
-				},
-				headers: {
-					'Authorization': VITE_SPORTMONKS_API_KEY,
-					'Content-Type': 'application/json',
-					'Accept': 'application/json',
-				},
+				headers,
+				params,
 			}
 		);
 

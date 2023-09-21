@@ -4,6 +4,18 @@ import camelcaseKeys from 'camelcase-keys';
 
 const { VITE_SPORTMONKS_BASE_URL, VITE_SPORTMONKS_API_KEY } = process.env;
 
+const headers = {
+	'Authorization': VITE_SPORTMONKS_API_KEY,
+	'Accept': 'application/json',
+	'Content-Type': 'application/json',
+};
+
+const params = {
+	select: 'starting_at',
+	include: 'state;scores;participants:name,image_path',
+	timezone: 'Europe/Warsaw',
+};
+
 export const handler = async event => {
 	try {
 		const { date, fixtureIds } = event.queryStringParameters;
@@ -20,16 +32,8 @@ export const handler = async event => {
 		const response = await axios.get(
 			`${VITE_SPORTMONKS_BASE_URL}/fixtures${endpoint}`,
 			{
-				params: {
-					select: 'starting_at',
-					include: 'state;scores;participants:name,image_path',
-					timezone: 'Europe/Warsaw',
-				},
-				headers: {
-					'Authorization': VITE_SPORTMONKS_API_KEY,
-					'Content-Type': 'application/json',
-					'Accept': 'application/json',
-				},
+				headers,
+				params,
 			}
 		);
 
