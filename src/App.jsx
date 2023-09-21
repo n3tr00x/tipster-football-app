@@ -12,7 +12,7 @@ import {
 } from './layouts/TipLayout';
 // pages
 import { ErrorPage } from './pages/Error';
-import { HomePage } from './pages/Home';
+import { HomePage, loader as pointsLoader } from './pages/Home';
 import { SignUpPage, action as signUpAction } from './pages/SignUp';
 import { SignInPage, action as signInAction } from './pages/SignIn';
 import {
@@ -42,6 +42,7 @@ const router = createBrowserRouter([
 			{
 				index: true,
 				element: <HomePage />,
+				loader: pointsLoader,
 			},
 			{
 				path: 'sign-in',
