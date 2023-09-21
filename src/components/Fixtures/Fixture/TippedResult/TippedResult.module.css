@@ -1,0 +1,8 @@
+.tippedResult {
+	font-size: 1.4rem;
+}
+
+.tippedResult span {
+	font-weight: 700;
+	color: var(--color-emerald);
+}

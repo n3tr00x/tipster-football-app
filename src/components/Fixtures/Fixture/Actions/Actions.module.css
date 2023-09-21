@@ -1,0 +1,23 @@
+.actionContainer {
+	display: flex;
+	gap: 2rem;
+	margin-bottom: 1rem;
+}
+
+.tipButton,
+.removeTippedFixture {
+	display: block;
+	flex: 1;
+	padding: 1.2rem 1.6rem;
+	font-size: 1.2rem;
+	text-align: center;
+	color: var(--color-white);
+	background-color: var(--color-emerald);
+	box-shadow: var(--shadow);
+	border-radius: 8px;
+}
+
+.removeTippedFixture {
+	background-color: var(--color-red);
+	border: 0;
+}

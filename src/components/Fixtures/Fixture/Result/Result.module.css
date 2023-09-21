@@ -1,0 +1,17 @@
+.result {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	flex: 2;
+	text-align: center;
+}
+
+.score {
+	font-size: 2.4rem;
+	font-weight: 700;
+}
+
+.startTime,
+.status {
+	font-size: 1.2rem;
+}

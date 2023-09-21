@@ -6,6 +6,10 @@ import {
 	StandingsLayout,
 	loader as standingsLoader,
 } from './layouts/StandingsLayout';
+import {
+	TipLayout,
+	loader as unassignedFixturesLoader,
+} from './layouts/TipLayout';
 // pages
 import { ErrorPage } from './pages/Error';
 import { HomePage } from './pages/Home';
@@ -19,6 +23,15 @@ import {
 	StandingsPage,
 	loader as standingsDetailsLoader,
 } from './pages/Standings';
+import {
+	TipPage,
+	loader as fixturesLoader,
+	action as fixturesAction,
+} from './pages/Tip';
+import {
+	SelectedFixturePage,
+	action as fixtureAction,
+} from './pages/SelectedFixture';
 
 const router = createBrowserRouter([
 	{
@@ -54,6 +67,26 @@ const router = createBrowserRouter([
 						path: ':id',
 						element: <StandingsPage />,
 						loader: standingsDetailsLoader,
+					},
+				],
+			},
+			{
+				path: 'tip',
+				element: <TipLayout />,
+				loader: unassignedFixturesLoader,
+				children: [
+					{
+						path: ':date',
+						element: <TipPage />,
+						loader: fixturesLoader,
+						action: fixturesAction,
+						children: [
+							{
+								path: ':fixtureId',
+								element: <SelectedFixturePage />,
+								action: fixtureAction,
+							},
+						],
 					},
 				],
 			},

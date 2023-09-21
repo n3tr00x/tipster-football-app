@@ -1,0 +1,17 @@
+.fixtures {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 1.6rem;
+}
+
+.error {
+	font-size: 1.6rem;
+	text-align: center;
+	color: var(--color-red);
+}
+
+@media (min-width: 992px) {
+	.fixtures {
+		grid-template-columns: 1fr 1fr;
+	}
+}

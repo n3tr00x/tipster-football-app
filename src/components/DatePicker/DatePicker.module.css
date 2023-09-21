@@ -1,0 +1,45 @@
+.datePicker {
+	display: flex;
+	max-width: 640px;
+	margin-bottom: 1.6rem;
+	padding: 0.4rem;
+	background-color: var(--color-emerald);
+	color: var(--color-white);
+	box-shadow: var(--shadow);
+	border-radius: 8px;
+}
+
+.pickDate {
+	display: flex;
+	justify-content: center;
+	flex: 2;
+}
+
+.pickDate a {
+	padding: 1rem;
+}
+
+.pickDate a img {
+	width: 48px;
+	height: 48px;
+}
+
+.pickDate span {
+	font-weight: 700;
+	font-size: 1.2rem;
+	align-self: center;
+}
+
+.specificDate {
+	flex: 1;
+	align-self: center;
+}
+
+.specificDate input {
+	padding: 0.4rem;
+	font-size: 1.2rem;
+	outline: none;
+	text-align: center;
+	border: none;
+	/* border-radius: 12px; */
+}

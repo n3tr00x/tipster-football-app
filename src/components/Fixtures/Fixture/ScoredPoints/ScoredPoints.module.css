@@ -1,0 +1,26 @@
+.gold,
+.green,
+.red {
+	position: absolute;
+	inset: -12px -4px auto auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 1.2rem;
+	padding: 0.6rem 1.2rem;
+	color: var(--color-white);
+	border-radius: 4px;
+	box-shadow: var(--shadow);
+}
+
+.gold {
+	background-color: var(--color-gold);
+}
+
+.green {
+	background-color: var(--color-emerald);
+}
+
+.red {
+	background-color: var(--color-red);
+}
