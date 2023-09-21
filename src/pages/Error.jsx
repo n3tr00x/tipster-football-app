@@ -1,15 +1,15 @@
 import { useRouteError } from 'react-router-dom';
 import { Navigation } from '../components/Navigation/Navigation';
+import { Error } from '../components/Error/Error';
 
 export const ErrorPage = () => {
-	const { statusText } = useRouteError();
+	const { error, status } = useRouteError();
 
 	return (
 		<>
 			<Navigation />
 			<main>
-				<h2>Błąd!</h2>
-				<p>{statusText}</p>
+				<Error message={error.message} code={status} />
 			</main>
 		</>
 	);

@@ -1,0 +1,15 @@
+.error {
+	border-radius: 8px;
+	background-color: var(--color-grey);
+	box-shadow: var(--shadow);
+}
+
+.error p {
+	padding: 0.8rem;
+	font-size: 1.8rem;
+	text-align: center;
+}
+
+.code span {
+	color: var(--color-red);
+}
