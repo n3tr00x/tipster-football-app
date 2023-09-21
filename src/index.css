@@ -6,6 +6,7 @@
 	--color-darker-emerald: #064e3b;
 	--color-grey: #f1f5f9;
 	--color-red: rgb(145, 30, 30);
+	--color-gold: rgb(234, 179, 8);
 
 	/* root font size */
 	--font-size-root: 62.5%;
@@ -61,6 +62,10 @@ a {
 	text-decoration: none;
 }
 
+img {
+	display: block;
+}
+
 button,
 input,
 select,
@@ -75,10 +80,21 @@ table {
 	border-spacing: 0;
 }
 
-/* global classes */
+/* global styles */
+
+main {
+	margin: 1rem;
+	padding-bottom: 7.2rem;
+}
 
 .wrapper {
 	width: 100%;
 	max-width: 1200px;
 	margin: 0 auto;
+}
+
+/* popup classes */
+
+.popup-content {
+	width: 95%;
 }
