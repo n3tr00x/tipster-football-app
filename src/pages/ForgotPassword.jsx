@@ -1,4 +1,4 @@
-import { ForgotPasswordForm } from '../components/AuthForm/ForgotPasswordForm';
+import { ForgotPasswordForm } from '../components/Forms/ForgotPassword';
 import { json } from 'react-router-dom';
 import { forgotPassword } from '../../firebase/auth';
 
@@ -19,7 +19,8 @@ export const action = async ({ request }) => {
 		return json(
 			{
 				isFormDataValid: true,
-				message: 'Poprawnie wysłano link do zmiany hasła na podany email.',
+				message:
+					'Poprawnie wysłano link do zmiany hasła na podany email.',
 			},
 			{ status: 201 }
 		);

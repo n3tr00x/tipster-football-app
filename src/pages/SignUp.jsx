@@ -1,4 +1,4 @@
-import { AuthForm } from '../components/AuthForm/Form';
+import { AuthForm } from '../components/Forms/Auth';
 import { json } from 'react-router-dom';
 import { registerUser } from '../../firebase/auth';
 
