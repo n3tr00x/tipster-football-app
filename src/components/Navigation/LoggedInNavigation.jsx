@@ -16,6 +16,7 @@ export const LoggedInNavigation = () => {
 						className={({ isActive }) =>
 							isActive ? styles.active : null
 						}>
+						<span>Panel główny </span>
 						<img src={home} alt="" />
 					</NavLink>
 				</li>
@@ -25,6 +26,7 @@ export const LoggedInNavigation = () => {
 						className={({ isActive }) =>
 							isActive ? styles.active : null
 						}>
+						<span>Typuj</span>
 						<img src={ball} alt="" />
 					</NavLink>
 				</li>
@@ -34,6 +36,7 @@ export const LoggedInNavigation = () => {
 						className={({ isActive }) =>
 							isActive ? styles.active : null
 						}>
+						<span>Tabele</span>
 						<img src={standings} alt="" />
 					</NavLink>
 				</li>
@@ -43,6 +46,7 @@ export const LoggedInNavigation = () => {
 						className={({ isActive }) =>
 							isActive ? styles.active : null
 						}>
+						<span>Ustawienia</span>
 						<img src={settings} alt="" />
 					</NavLink>
 				</li>

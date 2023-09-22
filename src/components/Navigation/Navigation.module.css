@@ -44,6 +44,10 @@
 	margin: 0 auto;
 }
 
+.navigation .item a span {
+	display: none;
+}
+
 .navigation .item a.active {
 	background-color: var(--color-darker-emerald);
 }
@@ -78,5 +82,13 @@
 
 	.navigation .item a {
 		transition-property: color;
+	}
+
+	.navigation .item a img {
+		display: none;
+	}
+
+	.navigation .item a span {
+		display: block;
 	}
 }
