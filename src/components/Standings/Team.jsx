@@ -6,7 +6,7 @@ export const Team = ({ data }) => {
 		overallMatchesPlayed,
 		overallWins,
 		overallDraws,
-		overallLost,
+		overallLosts,
 		overallGoalsScored,
 		overallGoalsConceded,
 		goalDiffrence,
@@ -23,7 +23,7 @@ export const Team = ({ data }) => {
 			<td>{overallMatchesPlayed}</td>
 			<td>{overallWins}</td>
 			<td>{overallDraws}</td>
-			<td>{overallLost}</td>
+			<td>{overallLosts}</td>
 			<td>{`${overallGoalsScored}:${overallGoalsConceded}`}</td>
 			<td>{goalDiffrence}</td>
 			<td>{points}</td>
