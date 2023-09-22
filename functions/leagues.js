@@ -2,10 +2,10 @@
 import axios from 'axios';
 import camelcaseKeys from 'camelcase-keys';
 
-const { VITE_SPORTMONKS_BASE_URL, VITE_SPORTMONKS_API_KEY } = process.env;
+const { SPORTMONKS_BASE_URL, SPORTMONKS_API_KEY } = process.env;
 
 const headers = {
-	'Authorization': VITE_SPORTMONKS_API_KEY,
+	'Authorization': SPORTMONKS_API_KEY,
 	'Accept': 'application/json',
 	'Content-Type': 'application/json',
 };
@@ -17,13 +17,10 @@ const params = {
 
 export const handler = async () => {
 	try {
-		const response = await axios.get(
-			`${VITE_SPORTMONKS_BASE_URL}/leagues`,
-			{
-				headers,
-				params,
-			}
-		);
+		const response = await axios.get(`${SPORTMONKS_BASE_URL}/leagues`, {
+			headers,
+			params,
+		});
 
 		const rawData = camelcaseKeys(response.data.data, { deep: true });
 
