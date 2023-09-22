@@ -47,7 +47,7 @@ export const handler = async event => {
 				),
 				overallWins: getSpecificDetailValue(details, 'overall-won'),
 				overallDraws: getSpecificDetailValue(details, 'overall-draw'),
-				overallLost: getSpecificDetailValue(details, 'overall-lost'),
+				overallLosts: getSpecificDetailValue(details, 'overall-lost'),
 				overallGoalsScored: getSpecificDetailValue(
 					details,
 					'overall-goals-for'

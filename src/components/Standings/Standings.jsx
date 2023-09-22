@@ -10,7 +10,11 @@ export const Standings = ({ standings }) => {
 					<th>Pozycja</th>
 					<th>Drużyna</th>
 					<th>Mecze</th>
+					<th>Wygrane</th>
+					<th>Remis</th>
+					<th>Porażki</th>
 					<th>Bramki</th>
+					<th>Różnica bramek</th>
 					<th>Punkty</th>
 				</tr>
 			</thead>

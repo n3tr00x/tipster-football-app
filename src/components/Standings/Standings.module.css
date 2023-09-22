@@ -1,6 +1,6 @@
 .standings {
 	width: 100%;
-	font-size: 1.3rem;
+	font-size: 1.1rem;
 	box-shadow: var(--shadow);
 }
 
@@ -9,11 +9,61 @@
 	background-color: var(--color-emerald);
 }
 
-.standings tbody td,
-.standings thead th {
+.standings thead th,
+.standings tbody td {
 	padding: 1.2rem 0.4rem;
 }
 
 .standings tbody tr:nth-child(2n) {
 	background-color: var(--color-grey);
+}
+
+.standings thead th:nth-child(4),
+.standings tbody td:nth-child(4),
+.standings thead th:nth-child(5),
+.standings tbody td:nth-child(5),
+.standings thead th:nth-child(6),
+.standings tbody td:nth-child(6),
+.standings thead th:nth-child(8),
+.standings tbody td:nth-child(8) {
+	display: none;
+}
+
+.standings tbody td:not(td:nth-child(2)) {
+	text-align: center;
+}
+
+.standings tbody td:nth-child(2) {
+	display: flex;
+	gap: 12px;
+}
+
+.standings tbody td img {
+	width: 24px;
+}
+
+.standings tbody td span {
+	align-self: center;
+}
+
+@media (min-width: 768px) {
+	.standings {
+		font-size: 1.4rem;
+	}
+
+	.standings thead th:nth-child(4),
+	.standings tbody td:nth-child(4),
+	.standings thead th:nth-child(5),
+	.standings tbody td:nth-child(5),
+	.standings thead th:nth-child(6),
+	.standings tbody td:nth-child(6) {
+		display: table-cell;
+	}
+}
+
+@media (min-width: 992px) {
+	.standings thead th:nth-child(8),
+	.standings tbody td:nth-child(8) {
+		display: table-cell;
+	}
 }
