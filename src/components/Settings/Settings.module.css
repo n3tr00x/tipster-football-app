@@ -27,6 +27,12 @@
 	box-shadow: var(--shadow);
 }
 
+.action input:focus,
+.action button:focus,
+.action a:focus {
+	outline: 2px solid var(--color-darker-emerald);
+}
+
 .action button {
 	width: 100%;
 }

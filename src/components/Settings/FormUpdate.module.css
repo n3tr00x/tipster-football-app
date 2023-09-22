@@ -25,9 +25,3 @@
 .formContent button {
 	flex: 1;
 }
-
-.form input:focus,
-.form button:focus,
-.form a:focus {
-	outline: 2px solid var(--color-darker-emerald);
-}
