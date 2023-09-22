@@ -10,8 +10,14 @@
 	color: var(--color-red);
 }
 
+@media (min-width: 768px) {
+	.fixtures {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
 @media (min-width: 992px) {
 	.fixtures {
-		grid-template-columns: 1fr 1fr;
+		grid-template-columns: repeat(3, 1fr);
 	}
 }
