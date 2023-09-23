@@ -13,3 +13,13 @@
     from = '/*'
     to = '/index.html'
     status = 200
+
+[[redirects]]
+    from = '/standings'
+    to = '/index.html'
+    status = 200
+
+[[redirects]]
+    from = '/tip'
+    to = '/index.html'
+    status = 200
