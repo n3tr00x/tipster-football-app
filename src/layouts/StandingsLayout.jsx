@@ -47,7 +47,7 @@ export const loader = () => {
 };
 
 const loadLeagues = async () => {
-	const response = await fetch('/api/leagues');
+	const response = await fetch('/.netlify/functions/leagues');
 
 	if (!response.ok) {
 		return response;

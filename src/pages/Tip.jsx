@@ -44,7 +44,7 @@ const TipPageContent = () => {
 };
 
 const loadFixtures = async date => {
-	const response = await fetch(`/api/fixtures?date=${date}`);
+	const response = await fetch(`/.netlify/functions/fixtures?date=${date}`);
 	const fixtures = await response.json();
 
 	return fixtures;

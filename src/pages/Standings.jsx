@@ -16,7 +16,7 @@ export const StandingsPage = () => {
 export const loader = async ({ params }) => {
 	const id = params.id;
 
-	const response = await fetch(`/api/standings?id=${id}`);
+	const response = await fetch(`/.netlify/functions/standings?id=${id}`);
 
 	if (!response.ok) {
 		return response;
