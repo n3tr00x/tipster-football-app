@@ -1,7 +1,7 @@
-import { useRedirect } from '../hooks/useRedirect';
-
 export const LandingPage = () => {
-	useRedirect('/');
-
-	return <h1>Dołącz do grona społeczności obstawiającej mecze!</h1>;
+	return (
+		<h2 style={{ fontSize: '2rem', textAlign: 'center' }}>
+			Dołącz do grona społeczności typującej mecze!
+		</h2>
+	);
 };
