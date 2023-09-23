@@ -87,7 +87,9 @@ const getFixturesWithNoGrantedPoints = async () => {
 	);
 
 	const response = await fetch(
-		`/api/fixtures?fixtureIds=${fixturesIdsWithNoGrantedPoints.join(',')}`
+		`/.netlify/functions/fixtures?fixtureIds=${fixturesIdsWithNoGrantedPoints.join(
+			','
+		)}`
 	);
 	const fixtures = await response.json();
 
