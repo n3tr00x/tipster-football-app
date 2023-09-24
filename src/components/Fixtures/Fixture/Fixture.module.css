@@ -1,6 +1,9 @@
 .fixture {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	min-height: 198px;
 	position: relative;
-	align-self: center;
 	padding: 2rem;
 	background-color: var(--color-grey);
 	box-shadow: var(--shadow);
@@ -9,5 +12,4 @@
 
 .details {
 	display: flex;
-	margin-bottom: 1.8rem;
 }
