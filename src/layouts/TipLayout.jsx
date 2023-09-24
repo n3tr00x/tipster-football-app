@@ -29,14 +29,14 @@ const handleGrantingPoints = (fixtures, fixturesWithNoGrantedPoints) => {
 		};
 
 		const userPrediction = {
-			home: tippedFixture?.score.home.toString(),
-			away: tippedFixture?.score.away.toString(),
+			home: tippedFixture?.score.home,
+			away: tippedFixture?.score.away,
 		};
 
 		if (
 			fixture.state.code === 'FT' &&
-			userPrediction.home &&
-			userPrediction.away
+			userPrediction.home.toString() &&
+			userPrediction.away.toString()
 		) {
 			const points = analyzeResult(realResult, userPrediction);
 			updateGrantedPoints(fixture.id, points);
