@@ -11,6 +11,7 @@ import {
 	updatePassword,
 	updateProfile,
 } from 'firebase/auth';
+import { setUsername } from './database';
 
 class AuthError extends Error {
 	name = 'AuthError';
@@ -55,6 +56,8 @@ export const registerUser = async ({
 			photoURL:
 				'https://cdn.pixabay.com/photo/2014/04/02/10/25/man-303792_1280.png',
 		});
+
+		setUsername(username);
 
 		await sendEmailVerification(user, {
 			url: `${window.location.origin}/sign-in`,

@@ -18,6 +18,13 @@ export const setTippedFixture = async tippedFixtureData => {
 	});
 };
 
+export const setUsername = async username => {
+	const uid = await getUserUID();
+	const usernameRef = ref(database, `/${uid}/username`);
+
+	set(usernameRef, username);
+};
+
 export const removeTippedFixture = async id => {
 	const uid = await getUserUID();
 	const tippedFixtureRef = ref(database, `/${uid}/fixtures/${id}`);
@@ -93,6 +100,38 @@ export const getScoredPoints = async () => {
 	}, 0);
 
 	return points;
+};
+
+export const getLeaderboards = async () => {
+	const usersRef = ref(database, '/');
+
+	const snapshot = await get(usersRef);
+	if (!snapshot.exists()) {
+		return new Error('Nie znaleziono użytkownika!');
+	}
+	const data = await snapshot.val();
+	const users = Object.keys(data).map(user => ({
+		id: user,
+		...data[user],
+	}));
+
+	const leaderboardData = users.map(user => {
+		const username = user.username;
+		const points = Object.values(user.fixtures).reduce(
+			(previousValue, currentValue) => {
+				return previousValue + currentValue.points;
+			},
+			0
+		);
+
+		return {
+			id: user.id,
+			username,
+			points,
+		};
+	});
+
+	return leaderboardData.sort((a, b) => b.points - a.points);
 };
 
 const getTippedFixtures = async () => {

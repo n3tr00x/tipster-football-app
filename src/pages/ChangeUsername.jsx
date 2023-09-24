@@ -1,4 +1,5 @@
 import { updateProfileDetails } from '../../firebase/auth';
+import { setUsername } from '../../firebase/database';
 
 export const action = async ({ request }) => {
 	const data = await request.formData();
@@ -13,6 +14,7 @@ export const action = async ({ request }) => {
 	};
 
 	updateProfileDetails(updatedData);
+	setUsername(username);
 
 	return { message: 'Pomyślnie zaktualizowano nazwę użytkownika.' };
 };
