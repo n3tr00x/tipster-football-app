@@ -2,6 +2,7 @@ import { NavLink } from 'react-router-dom';
 import home from '../../assets/home.svg';
 import ball from '../../assets/ball.svg';
 import standings from '../../assets/standings.svg';
+import leaderboard from '../../assets/leaderboard.svg';
 import settings from '../../assets/settings.svg';
 
 import styles from './Navigation.module.css';
@@ -38,6 +39,16 @@ export const LoggedInNavigation = () => {
 						}>
 						<span>Tabele</span>
 						<img src={standings} alt="" />
+					</NavLink>
+				</li>
+				<li className={styles.item}>
+					<NavLink
+						to="/leaderboard"
+						className={({ isActive }) =>
+							isActive ? styles.active : null
+						}>
+						<span>Ranking</span>
+						<img src={leaderboard} alt="" />
 					</NavLink>
 				</li>
 				<li className={styles.item}>

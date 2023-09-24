@@ -44,6 +44,10 @@ import {
 } from './pages/ChangeEmail';
 import { action as changeUsernameAction } from './pages/ChangeUsername';
 import { action as changeAvatarAction } from './pages/ChangeAvatar';
+import {
+	LeaderboardPage,
+	loader as leaderboardLoader,
+} from './pages/Leaderboard';
 
 const router = createBrowserRouter([
 	{
@@ -102,6 +106,11 @@ const router = createBrowserRouter([
 						],
 					},
 				],
+			},
+			{
+				path: 'leaderboard',
+				element: <LeaderboardPage />,
+				loader: leaderboardLoader,
 			},
 			{
 				path: 'settings',
