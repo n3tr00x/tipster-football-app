@@ -117,12 +117,11 @@ export const getLeaderboards = async () => {
 
 	const leaderboardData = users.map(user => {
 		const username = user.username;
-		const points = Object.values(user.fixtures).reduce(
-			(previousValue, currentValue) => {
-				return previousValue + currentValue.points;
-			},
-			0
-		);
+		const fixtures = user.fixtures ? Object.values(user.fixtures) : [];
+
+		const points = fixtures.reduce((previousValue, currentValue) => {
+			return previousValue + currentValue.points;
+		}, 0);
 
 		return {
 			id: user.id,
